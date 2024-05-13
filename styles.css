@@ -1,0 +1,113 @@
+/* general */
+
+*,*::after,*::before{
+    margin: 0;
+    border: 0;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #dec7fd, rgb(0, 222, 192));
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading */
+
+h1{
+    font-size: 5vh;
+    margin: 2.5vh;
+    text-decoration: underline;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(25, 17, 95);
+}
+
+/* board */
+
+#board{
+    padding-top: 10%;
+    width: 70vmin;
+    height: 60vmin;
+    border-radius: 4%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+/* cell */
+
+.cell{
+    position: relative;
+    display: flex;
+}
+
+.cell::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(transparent 60%, #5a0a72 60%);
+    z-index: 1;
+    box-shadow: 0px 0px 20px rgba(36, 4, 49, 0.6);
+}
+
+.piece{
+    border-radius: 50%;
+    background-color: rgb(228, 25, 25);
+    flex-grow: 1;
+}
+
+.piece[data-player="1"] {
+    background-color: rgb(228, 25, 25);
+}
+
+.piece[data-player="2"] {
+    background-color: rgb(38, 248, 11);
+}
+
+.piece[data-placed="false"] {
+    transform: translateY(-10vmin);
+}
+
+/* Conclusion Message */
+
+.hide {
+    display: none;
+}
+
+.msg-container-1{
+    margin-top: 3%;
+    height: 40%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#msg {
+    background-color: #eed6f5;
+    box-shadow: 0px 0px 20px rgba(36, 4, 49, 0.6);
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+#reset-game {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 10px;
+    height: 40%;
+    width: 50%;
+    border-radius: 12px;
+    background-color: #5a0a72;
+    padding: 10px;
+    color: #fff;
+}
+
+
+/*#F9DB6D #E16F7C #000 #df71ee*/
